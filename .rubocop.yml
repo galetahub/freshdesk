@@ -1,0 +1,23 @@
+AllCops:
+  Exclude:
+    - 'app/views/**/*.slim'
+    - 'app/views/**/**/*.slim'
+
+Style/Documentation:
+  Enabled: false
+
+##################### Metrics ##################################
+
+Metrics/LineLength:
+  Max: 110
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/ModuleLength:
+  Max: 200
+
+##################### Rails ##################################
+
+Rails:
+  Enabled: false
