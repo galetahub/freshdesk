@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
+require 'freshdesk/resources/base'
+
 module Freshdesk
   module Resources
     class Ticket < Base
-      collection_path '/tickets'
+      self.collection_path = '/tickets'
 
       def create_outbound_email(params)
         post(File.join(self.class.collection_path, 'outbound_email'), body: params)

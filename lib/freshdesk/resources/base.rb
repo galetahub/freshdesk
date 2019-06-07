@@ -9,12 +9,13 @@ module Freshdesk
 
       format :json
 
-      def initialize
-        self.class.base_uri "https://#{Freshdesk.configuration.domain}.freshdesk.com/api/v2"
+      class << self
+        attr_accessor :collection_path
       end
 
-      def self.collection_path(value)
-        @collection_path = value
+      def initialize
+        self.class.base_uri "https://#{Freshdesk.configuration.domain}.freshdesk.com/api/v2"
+        @basic_auth = { username: Freshdesk.configuration.api_key }
       end
 
       def create(params)
@@ -56,6 +57,8 @@ module Freshdesk
       end
 
       def request(method_type, path, options = {})
+        options[:basic_auth] ||= @basic_auth
+
         response = self.class.send(method_type, path, options)
         return unless response
 
