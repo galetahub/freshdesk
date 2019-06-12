@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'freshdesk/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'freshdesk'
+  spec.name          = 'galetahub-freshdesk'
   spec.version       = Freshdesk::VERSION
   spec.authors       = ['Galeta Igor']
   spec.email         = ['galeta.igor@gmail.com']
