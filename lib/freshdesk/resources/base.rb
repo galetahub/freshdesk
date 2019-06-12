@@ -8,6 +8,7 @@ module Freshdesk
       include HTTParty
 
       format :json
+      headers 'Content-Type' => 'application/json'
 
       class << self
         attr_accessor :collection_path

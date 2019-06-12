@@ -20,7 +20,34 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Setup
+
+```
+# config/initializers/freshdesk.rb
+
+require 'freshdesk'
+
+Freshdesk.configure do |config|
+  config.api_key = ENV['FRESHDESK_KEY']
+  config.domain = ENV['FRESHDESK_DOMAIN']
+end
+```
+
+### Company API
+
+```
+client = Freshdesk::Resources::Company.new
+client.all
+
+company = client.create(name: 'Test', description: 'Test')
+```
+
+### Contact API
+
+```
+client = Freshdesk::Resources::Contact.new
+client.create(name: '...', email: '...',  mobile: '...', company_id: company['id'])
+```
 
 ## Development
 
