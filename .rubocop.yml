@@ -8,7 +8,7 @@ Style/Documentation:
 
 ##################### Metrics ##################################
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 110
 
 Metrics/ClassLength:
